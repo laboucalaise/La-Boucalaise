@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pupitres - La Boucalaise</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .shadow-green {
+      box-shadow: 0 4px 6px -1px rgba(34, 197, 94, 0.4), 0 2px 4px -2px rgba(34, 197, 94, 0.3);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-green-900 font-sans">
+
+<!-- Navbar (responsive) -->
+<nav class="bg-green-700 text-white px-6 py-4">
+  <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <!-- Logo + titre -->
+    <a href="index.html" class="flex items-center gap-3 min-w-0">
+      <div class="bg-white rounded-full p-1 shrink-0">
+        <img src="logo_boucalaise.png" class="w-14 h-14 md:w-20 md:h-20 rounded-full" alt="Logo" />
+      </div>
+      <span class="text-lg md:text-2xl font-bold truncate">Fanfare La Boucalaise</span>
+    </a>
+
+    <!-- Bouton menu (mobile) -->
+    <button id="menuBtn"
+      class="md:hidden inline-flex items-center justify-center p-2 rounded hover:bg-green-600"
+      aria-label="Ouvrir le menu">
+      <!-- icône hamburger -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <!-- Liens (desktop) -->
+    <div class="hidden md:flex gap-6 text-sm">
+      <a href="index.html" class="hover:underline">Accueil</a>
+      <a href="fanfare.html" class="hover:underline">La Fanfare</a>
+      <a href="musiciens.html" class="hover:underline">Nos Musiciens</a>
+      <a href="morceaux.html" class="hover:underline">Nos Morceaux</a>
+      <a href="sponsors.html" class="hover:underline">Nos Sponsors</a>
+      <a href="rejoindre.html" class="hover:underline">Nous Rejoindre</a>
+    </div>
+  </div>
+
+  <!-- Menu mobile (dépliable) -->
+  <div id="mobileMenu" class="md:hidden hidden mt-4 space-y-2 text-sm">
+    <a href="index.html" class="block px-3 py-2 rounded hover:bg-green-600">Accueil</a>
+    <a href="fanfare.html" class="block px-3 py-2 rounded hover:bg-green-600">La Fanfare</a>
+    <a href="musiciens.html" class="block px-3 py-2 rounded hover:bg-green-600">Nos Musiciens</a>
+    <a href="morceaux.html" class="block px-3 py-2 rounded hover:bg-green-600">Nos Morceaux</a>
+    <a href="sponsors.html" class="block px-3 py-2 rounded hover:bg-green-600">Nos Sponsors</a>
+    <a href="rejoindre.html" class="block px-3 py-2 rounded hover:bg-green-600">Nous Rejoindre</a>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+</script>
+
+
+  <!-- Titre -->
+  <section class="py-10 px-6 text-center">
+    <h1 class="text-4xl font-bold mb-2">🎼 Les Pupitres</h1>
+    <p class="text-lg text-gray-700 mb-6">Explorez la diversité musicale de La Boucalaise</p>
+
+    <!-- Liens de navigation vers les pupitres -->
+    <div class="flex flex-wrap justify-center gap-4 text-sm md:text-base">
+      <a href="#PERCUSSIONS" class="text-green-700 font-semibold hover:underline">PERCUSSIONS</a>
+      <a href="#FLUTES" class="text-green-700 font-semibold hover:underline">FLUTES</a>
+      <a href="#SAXOPHONES" class="text-green-700 font-semibold hover:underline">SAXOPHONES</a>
+      <a href="#SAXHORN" class="text-green-700 font-semibold hover:underline">SAXHORN</a>
+      <a href="#TROMPETTES" class="text-green-700 font-semibold hover:underline">TROMPETTES</a>
+      <a href="#EUPHONIUMS" class="text-green-700 font-semibold hover:underline">EUPHONIUMS</a>
+      <a href="#TROMBONES" class="text-green-700 font-semibold hover:underline">TROMBONES</a>
+      <a href="#BASSON" class="text-green-700 font-semibold hover:underline">BASSON</a>      
+      <a href="#MEMBRES & BENEVOLES" class="text-green-700 font-semibold hover:underline">MEMBRES & BENEVOLES</a>
+    </div>
+  </section>
+
+  <!-- Pupitres section -->
+  <section class="px-6 space-y-16">
+
+
+<!-- PERCUSSIONS -->
+    <div class="border-t border-green-200"></div>
+    <div id="PERCUSSIONS" class="space-y-6">
+      <h2 class="text-2xl font-bold text-green-700 text-center">Les Percussions</h2>
+  
+     <!-- Musiciens du pupitre -->
+<div class="flex flex-wrap justify-center gap-20 pt-6">
+
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Andrès_Espinoza.jpg"
+         alt="Andrès ESPINOZA"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+
+    <p class="font-semibold mt-2">
+      Andrès <span class="uppercase">ESPINOZA</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "La percussion frappe comme la vie : parfois douce, parfois brutale, mais toujours elle fait vibrer l'âme"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Carole_Lohmann.jpg"
+         alt="Carole LOHMANN"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Carole <span class="uppercase">LOHMANN</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "La musique rythme ma vie de maman multicasquette, toujours prête à rire et s'amuser"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Frédéric_Mamert.jpg"
+         alt="Frédéric MAMERT"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+
+    <p class="font-semibold mt-2">
+      Frédéric <span class="uppercase">MAMERT</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Si la fanfare était un corps, nous percussionnistes nous sommes le cœur qui bat"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Iban_Carrera.jpg"
+         alt="Iban CARRERA"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Iban <span class="uppercase">CARRERA</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Trop heureux de faire de la musique avec maman et papi !"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Marielle_Laborde.jpg"
+         alt="Marielle LABORDE"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Marielle <span class="uppercase">LABORDE</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Cymbaliste rêvant un jour d'ouvrir une OLA !"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Mathieu_Espiaube.jpg"
+         alt="Mathieu ESPIAUBE"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Mathieu <span class="uppercase">ESPIAUBE</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Je tape partout, sauf sur les nerfs !"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Murielle_Mattos.jpg"
+         alt="Murielle MATTOS"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Murielle <span class="uppercase">MATTOS</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Un vrai travail d'équipe avec comme "récompense" des sourires et mouvements de corps garantis"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Roberto_Mattos.jpg"
+         alt="Roberto MATTOS"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Roberto <span class="uppercase">MATTOS</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Je tambourine à la porte . Tu tambourines sur la table. Il tambourine avec enthousiasme. Nous tambourinons en rythme"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Yves_Jammaerts.jpg"
+         alt="Yves JAMMAERTS"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Yves <span class="uppercase">JAMMAERTS</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Je cogne, les amis soufflent, on est heureux"
+    </p>
+  </div>
+    <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/unknown"
+         alt="Cécile BEHERETCHE"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Cécile <span class="uppercase">BEHERETCHE</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      ""
+    </p>
+  </div>
+</div>
+
+
+<!-- FLUTES -->
+    <div class="border-t border-green-200"></div>
+    <div id="FLUTES" class="space-y-6">
+      <h2 class="text-2xl font-bold text-green-700 text-center">Les Flutes</h2>
+  
+     <!-- Musiciens du pupitre -->
+<div class="flex flex-wrap justify-center gap-20 pt-6">
+
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/FLUTES/Anais_Cloux.jpg"
+         alt="Anais CLOUX"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+
+    <p class="font-semibold mt-2">
+      Anais <span class="uppercase">CLOUX</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "La musique : le petit truc en plus qui fait rayonner ma vie"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/FLUTES/Chloé_Tauzia.jpg"
+         alt="Chloé TAUZIA"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Chloé <span class="uppercase">TAUZIA</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Jouer à la Boucalaise, c'est le top du top !"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/FLUTES/Corinne_Aleu.jpg"
+         alt="Corinne ALEU"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+
+    <p class="font-semibold mt-2">
+      Corinne <span class="uppercase">ALEU</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Jouer de la musique apporte un équilibre à ma vie et un peu de joie à ceux qui l'écoutent. Une petite bulle de bonheur pour tous"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/FLUTES/Céline_Nabias.jpg"
+         alt="Céline NABIAS"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Céline <span class="uppercase">NABIAS</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Bébé, fatiguée mais toujours autant l'envie de jouer"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/FLUTES/Emma_Nabias.jpg"
+         alt="Emma NABIAS"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Emma <span class="uppercase">NABIAS</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "J'adore aller à la fanfare avec maman et mes copines"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/FLUTES/Justie_Jammaerts.jpg"
+         alt="Justine JAMMAERTS"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Justine <span class="uppercase">JAMMAERTS</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "J’aime la musique, j’aime rire… et quand les deux se mélangent, c’est le top du top!"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/FLUTES/Lucile_Pécastaing.jpg"
+         alt="Lucile PECASTAING"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Lucile <span class="uppercase">PECASTAING</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Les boucalais c'est que de l'amour"
+    </p>
+  </div>
+</div>
+
+
+
+<!-- SAXOPHONES -->
+    <div class="border-t border-green-200"></div>
+    <div id="SAXOPHONES" class="space-y-6">
+      <h2 class="text-2xl font-bold text-green-700 text-center">Les Saxophones</h2>
+  
+     <!-- Musiciens du pupitre -->
+<div class="flex flex-wrap justify-center gap-20 pt-6">
+
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/SAXOPHONES/Carine_Pécastaings.jpg"
+         alt="Carine PECASTAINGS"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+
+    <p class="font-semibold mt-2">
+      Carine <span class="uppercase">PECASTAING</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Comme dans une famille, la musique crée des souvenirs, rassemble et résonne dans nos cœurs"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/SAXOPHONES/Catherine_Perlinski.jpg"
+         alt="Catherine PERLINSKI"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Catherine <span class="uppercase">PERLINSKI</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "J'ai perdu le do de ma clarinette"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/SAXOPHONES/Charlène_Sarrailh.jpg"
+         alt="Charlène SARRAILH"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+
+    <p class="font-semibold mt-2">
+      Charlène <span class="uppercase">SARRAILH</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Saxophoniste : je souffle dans un tuyau et, parfois, ça fait de la musique"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/SAXOPHONES/Laura_Jammaerts.jpg"
+         alt="Laura JAMMAERTS"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Laura <span class="uppercase">JAMMAERTS</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "La vie en rose, en paillettes et en musique!"
+    </p>
+  </div>
+</div>
+
+
+<!-- SAXHORN -->
+    <div class="border-t border-green-200"></div>
+    <div id="SAXHORN" class="space-y-6">
+      <h2 class="text-2xl font-bold text-green-700 text-center">Les Saxhorns</h2>
+  
+     <!-- Musiciens du pupitre -->
+<div class="flex flex-wrap justify-center gap-20 pt-6">
+
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/SAXHORN/Aude_Alonso.jpg"
+         alt="Aude ALOSNO"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+
+    <p class="font-semibold mt-2">
+      Ause <span class="uppercase">ALONSO</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Entre fanfare, famille et flamenco, ma vie est un rythme continuel"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/SAXHORN/Bernard_Bacqué.jpg"
+         alt="Bernard BACQUE"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Bernard <span class="uppercase">BACQUET</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Depuis l'âge de 7 ans toujours immergé dans la musique"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/SAXHORN/Marina_Carrera.jpg"
+         alt="MArina CARRERA"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+
+    <p class="font-semibold mt-2">
+      Marina <span class="uppercase">CARRERA</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "La musique une histoire de famille!"
+    </p>
+  </div>
+ </div>
+
+
+ 
+<!-- TROMPETTES -->
+    <div class="border-t border-green-200"></div>
+    <div id="TROMPETTES" class="space-y-6">
+      <h2 class="text-2xl font-bold text-green-700 text-center">Les Trompettes</h2>
+  
+     <!-- Musiciens du pupitre -->
+<div class="flex flex-wrap justify-center gap-20 pt-6">
+
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/TROMPETTES/Cécile_Pécastaing.jpg"
+         alt="Cécile PECASTAING"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+
+    <p class="font-semibold mt-2">
+      Cécile <span class="uppercase">PECASTAING</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      " Maman à mille à l'heure, énergie débordante, je fais résonner ma trompette comme je vis : avec générosité et passion"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/TROMPETTES/Elena_Alonso.jpg"
+         alt="Elena ALONSO"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Elena <span class="uppercase">ALONSO</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Je vis au rythme des notes que je créé"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/TROMPETTES/Jean_Michel_Jolliberry.jpg"
+         alt="Jean-Michel JOLLIBERRY"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+
+    <p class="font-semibold mt-2">
+      Jean-Michel <span class="uppercase">JOLLIBERRY</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      " "
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/TROMPETTES/Jean_Pierre_Cassasus.jpg"
+         alt="Jeqn-Pierre CASSASUS"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Jean-Pierre <span class="uppercase">CASSASUS</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      " "
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/TROMPETTES/Jérémie_Eliet.jpg"
+         alt="Jérémie ELIET"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Jérémie <span class="uppercase">ELIET</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Ola que tal, me llamo Rérémie , a mi me gusta la musica y mis amigos!"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/TROMPETTES/Pascale_Bartheu.jpg"
+         alt="Pascale BARTHEU"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Pascale <span class="uppercase">BARTHEU</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Ambitieuse, je prends plaisir à embarquer la troupe dans mes délires musicaux et chorégraphiques (je garde espoir ! …)"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/unknown"
+         alt="Jérome LEIZA"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Jérome <span class="uppercase">LEIZA</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      " "
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/unknown"
+         alt="Romain DUCASSOU"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Romain <span class="uppercase">DUCASSOU</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      " "
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/unknown"
+         alt="Lionel MILLOX"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Lionel <span class="uppercase">MILLOX</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      " "
+    </p>
+  </div>
+</div>
+
+
+ 
+
+<!-- EUPHONIUMS -->
+    <div class="border-t border-green-200"></div>
+    <div id="EUPHONIUMS" class="space-y-6">
+      <h2 class="text-2xl font-bold text-green-700 text-center">Les Euphoniums</h2>
+  
+     <!-- Musiciens du pupitre -->
+<div class="flex flex-wrap justify-center gap-20 pt-6">
+
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/EUPHONIUMS/Christophe_Lohmann.jpg"
+         alt="Christophe Lohmann"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+
+    <p class="font-semibold mt-2">
+      Christophe <span class="uppercase">LOHMANN</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Music connects people"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/EUPHONIUMS/Claude_Alonso.jpg"
+         alt="Claude ALONSO"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Claude <span class="uppercase">ALONSO</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Je mets le courant au travail et le souffle à la fanfare"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/EUPHONIUMS/Eric_Duclaux.jpg"
+         alt="Eric DUCLAUX"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+
+    <p class="font-semibold mt-2">
+      Eric <span class="uppercase">DUCLAUX</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Une grande famille, des musiciennes et musiciens au top !!"
+    </p>
+  </div>
+
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/EUPHONIUMS/Mélanie_Badie.jpg"
+         alt="Mélanie BADIE"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Mélanie <span class="uppercase">BADIE</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Telle une note sur la partition, portée par une fanfare qui a le cœur d'une famille"
+    </p>
+  </div>
+
+</div>
+
+
+<!-- TROMBONES -->
+    <div class="border-t border-green-200"></div>
+    <div id="TROMBONES" class="space-y-6">
+      <h2 class="text-2xl font-bold text-green-700 text-center">Les Trombones</h2>
+  
+     <!-- Musiciens du pupitre -->
+<div class="flex flex-wrap justify-center gap-20 pt-6">
+
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/TROMBONES/Augustin_Alonso.jpg"
+         alt="Augustin ALOSNO"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+
+    <p class="font-semibold mt-2">
+      Augustin <span class="uppercase">ALONSO</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "9 ans, tromboniste à la fanfare : bras longs, coulisse rapide et je fais plus de bruit que les supporters dans un stade de foot"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/TROMBONES/Julen_Larre_Lorenzi.jpg"
+         alt="Julen LARRE LORENZI"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Julen <span class="uppercase">LARRE LORENZI</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Si on te dit que tu fais trop de bruit, dit que t'es tromboniste : le silence c'est pour les autres!"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/TROMBONES/Xavier_Miqueu.jpg"
+         alt="Xavier MIQUEU"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+
+    <p class="font-semibold mt-2">
+      Xavier <span class="uppercase">MIQUEU</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Xavier tromboniste vintage"
+    </p>
+  </div>
+ </div>
+
+
+
+
+
+<!-- BASSON -->
+    <div class="border-t border-green-200"></div>
+    <div id="BASSON" class="space-y-6">
+      <h2 class="text-2xl font-bold text-green-700 text-center">Les Bassons</h2>
+  
+      
+      <!-- Musiciens du pupitre -->
+      <div class="flex flex-wrap justify-center gap-20 pt-6">
+        <div class="text-center">
+          <img src="img/Musiciens/MUSICIENS/BASSON/Léonie_Miqueu.jpg" alt="Léonie MIQUEU" class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+          <p class="font-semibold mt-2">Léonie <span class="uppercase">MIQUEU</span></p>
+          <p class="text-sm text-gray-600 italic">"Léonie super bassonnette"
+      </div>
+    </div>
+
+
+
+<!-- SOUBASSOPHONES -->
+    <div class="border-t border-green-200"></div>
+    <div id="SOUBASSOPHONES" class="space-y-6">
+      <h2 class="text-2xl font-bold text-green-700 text-center">Les SOUBASSOPHONES</h2>
+  
+     <!-- Musiciens du pupitre -->
+<div class="flex flex-wrap justify-center gap-20 pt-6">
+
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/SOUBASSOPHONES/Claude_Larre.jpg"
+         alt="Claude LARRE"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+
+    <p class="font-semibold mt-2">
+      Claude <span class="uppercase">LARRE</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      " "
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/SOUBASSOPHONES/Eric_Couanon.jpg"
+         alt="Eric COUANON"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Eric <span class="uppercase">COUANON</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Toutes ces années à faire résonner clairon, cor basse et souba et toujours aussi motivé et heureux de faire vivre notre belle musique La Boucalaise"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/SOUBASSOPHONES/Robert_Haurieu.jpg"
+         alt="Robert HAURIEU"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+
+    <p class="font-semibold mt-2">
+      Robert <span class="uppercase">HAURIEU</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Des années de fanfare, de copains et de bonne humeur : plus qu’un groupe, une famille en musique !"
+    </p>
+  </div>
+ </div>
+
+ <!-- Membres & Bénévoles -->
+    <div class="border-t border-green-200"></div>
+    <div id="MEMBRES & BENEVOLES" class="space-y-6">
+      <h2 class="text-2xl font-bold text-green-700 text-center">Nos Membres & Bénévoles</h2>
+  
+     <!-- Musiciens du pupitre -->
+<div class="flex flex-wrap justify-center gap-20 pt-6">
+
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Christianne_Bacqué.jpg"
+         alt="Christianne BACQUE"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+
+    <p class="font-semibold mt-2">
+      Christianne <span class="uppercase">BACQUE</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      ""
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Christianne_Mamert.jpg"
+         alt="Christianne MAMERT"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Christianne <span class="uppercase">MAMERT</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      ""
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Daniel_Mamert.jpg"
+         alt="Daniel MAMERT"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+
+    <p class="font-semibold mt-2">
+      Daniel <span class="uppercase">MAMERT</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      ""
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Arlette_Aleu.jpg"
+         alt="Arlette ALEU"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Arlette <span class="uppercase">ALEU</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Partage et convivialité dans une bonne ambiance musicale"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Jean_Pierre_Aleu.jpg"
+         alt="Jean-Pierre ALEU"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Jean-Pierre <span class="uppercase">ALEU</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Toujours agréable de se retrouver à la Boucalaise"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Cathy_Dufour.jpg"
+         alt="Cathy DUFOUR"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Cathy <span class="uppercase">DUFOUR</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      ""
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Francis_Gonzalez.jpg"
+         alt="Francis GONZALEZ"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Francis <span class="uppercase">GONZALEZ</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      ""
+    </p>
+  </div>
+
+<!--Benevoles-->
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Lucas_Lafeu.jpg"
+         alt="Lucas LAFEU"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Lucas <span class="uppercase">LAFEU</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "L'instrument que je maîtrise le plus c’est la tireuse à bière"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Gaétan_Dupruilh.jpg"
+         alt="Gaétan DUPRUILH"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Gaétan <span class="uppercase">DUPRUILH</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Toujours une note d'avance sur l'apéro !"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Nicolas_Laborde.jpg"
+         alt="Nicolas LABORDE"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Nicolas <span class="uppercase">LABORDE</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      ""
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Florian_Nabias.jpg"
+         alt="Florian NABIAS"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Florian <span class="uppercase">NABIAS</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Bénévole en béton ce que je maîtrise le mieux c'est les canons !"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Cyril_Tauzia.jpg"
+         alt="Cyril TAUZIA"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Cyril <span class="uppercase">TAUZIA</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Bénévole buvette: sans moi la fanfare jouerait plus juste, mais moins longtemps"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Mathieu_Pécastaing.jpg"
+         alt="Mathieu PECASTAING"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Mathieu <span class="uppercase">PECASTAING</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Toutes les filles de la boucalaise sont magnifiques, un peu comme !"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Sébastien_Carrera.jpg"
+         alt="Sebastien CARRERA"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Sebastien <span class="uppercase">CARRERA</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      "Quand j'ai rencontré ma femme, la musique faisait partie du package"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Xavier_Glyze.jpg"
+         alt="Xavier GLYZE"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Xavier <span class="uppercase">GLYZE</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      " Bénévole de la fanfare: celui qui fait beaucoup de choses … sauf du bruit avec un instrument"
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Caroline_Lorenzi.jpg"
+         alt="Caroline LORENZI"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Caroline <span class="uppercase">LORENZI</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      ""
+    </p>
+  </div>
+  <div class="text-center">
+    <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Jules_Pécastaing.jpg"
+         alt="Jules PECASTAING"
+         class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
+    <p class="font-semibold mt-2">
+      Jules <span class="uppercase">PECASTAING</span>
+    </p>
+    <p class="text-sm text-gray-600 italic w-36 mx-auto">
+      " Justine sera toujours mon amoureuse de la musicalaise, fais gaffe Gaétan !"
+    </p>
+  </div>
+
+</div>
+
+    
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-green-700 text-white py-6 text-center mt-16">
+    <p class="text-sm">📩 contact@la-boucalaise.com | 📞 07 81 07 65 46</p>
+    <div class="mt-2 space-x-4">
+      <a href="https://www.facebook.com/p/Fanfare-La-Boucalaise-100050930388001" target="_blank" class="underline">Facebook</a>
+      <a href="https://www.instagram.com/fanfare_la_boucalaise" target="_blank" class="underline">Instagram</a>
+    </div>
+  </footer>
+
+</body>
+</html>

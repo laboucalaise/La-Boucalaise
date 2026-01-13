@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nous Rejoindre - La Boucalaise</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-green-900 font-sans">
+
+<!-- Navbar (responsive) -->
+<nav class="bg-green-700 text-white px-6 py-4">
+  <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <!-- Logo + titre -->
+    <a href="index.html" class="flex items-center gap-3 min-w-0">
+      <div class="bg-white rounded-full p-1 shrink-0">
+        <img src="logo_boucalaise.png" class="w-14 h-14 md:w-20 md:h-20 rounded-full" alt="Logo" />
+      </div>
+      <span class="text-lg md:text-2xl font-bold truncate">Fanfare La Boucalaise</span>
+    </a>
+
+    <!-- Bouton menu (mobile) -->
+    <button id="menuBtn"
+      class="md:hidden inline-flex items-center justify-center p-2 rounded hover:bg-green-600"
+      aria-label="Ouvrir le menu">
+      <!-- icône hamburger -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <!-- Liens (desktop) -->
+    <div class="hidden md:flex gap-6 text-sm">
+      <a href="index.html" class="hover:underline">Accueil</a>
+      <a href="fanfare.html" class="hover:underline">La Fanfare</a>
+      <a href="musiciens.html" class="hover:underline">Nos Musiciens</a>
+      <a href="morceaux.html" class="hover:underline">Nos Morceaux</a>
+      <a href="sponsors.html" class="hover:underline">Nos Sponsors</a>
+      <a href="rejoindre.html" class="hover:underline">Nous Rejoindre</a>
+    </div>
+  </div>
+
+  <!-- Menu mobile (dépliable) -->
+  <div id="mobileMenu" class="md:hidden hidden mt-4 space-y-2 text-sm">
+    <a href="index.html" class="block px-3 py-2 rounded hover:bg-green-600">Accueil</a>
+    <a href="fanfare.html" class="block px-3 py-2 rounded hover:bg-green-600">La Fanfare</a>
+    <a href="musiciens.html" class="block px-3 py-2 rounded hover:bg-green-600">Nos Musiciens</a>
+    <a href="morceaux.html" class="block px-3 py-2 rounded hover:bg-green-600">Nos Morceaux</a>
+    <a href="sponsors.html" class="block px-3 py-2 rounded hover:bg-green-600">Nos Sponsors</a>
+    <a href="rejoindre.html" class="block px-3 py-2 rounded hover:bg-green-600">Nous Rejoindre</a>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+</script>
+
+
+  <!-- Haut de page -->
+  <section class="py-12 px-6 text-center">
+    <h1 class="text-4xl font-bold mb-4">🎺 Rejoindre la Boucalaise</h1>
+    <p class="max-w-2xl mx-auto text-lg text-gray-700">
+      Tu joues d’un instrument à vent ou à percussion ? Tu aimes l’ambiance festive des bandas et tu veux rejoindre une fanfare dynamique et intergénérationnelle ? N’attends plus, contacte-nous et viens partager la musique avec nous à Boucau et ailleurs !
+    </p>
+  </section>
+
+  <!-- Bouton contact -->
+  <section class="py-10 text-center">
+    <a href="mailto:contact@la-boucalaise.com" class="inline-block bg-green-700 hover:bg-green-800 text-white font-semibold py-3 px-6 rounded-lg shadow">
+      📩 Envoyer un email à la fanfare
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-green-700 text-white py-6 text-center mt-16">
+    <p class="text-sm">📩 contact@la-boucalaise.com | 📞 07 81 07 65 46</p>
+    <div class="mt-2 space-x-4">
+      <a href="https://www.facebook.com/p/Fanfare-La-Boucalaise-100050930388001" target="_blank" class="underline">Facebook</a>
+      <a href="https://www.instagram.com/fanfare_la_boucalaise" target="_blank" class="underline">Instagram</a>
+    </div>
+  </footer>
+
+</body>
+</html>

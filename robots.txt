@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://laboucalaise.github.io/La-Boucalaise/sitemap.xml

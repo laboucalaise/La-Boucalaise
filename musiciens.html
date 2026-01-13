@@ -17,6 +17,7 @@
 <!-- Navbar (responsive) -->
 <nav class="bg-green-700 text-white px-6 py-4">
   <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <!-- Logo + titre -->
     <a href="index.html" class="flex items-center gap-3 min-w-0">
       <div class="bg-white rounded-full p-1 shrink-0">
         <img src="logo_boucalaise.png" class="w-14 h-14 md:w-20 md:h-20 rounded-full" alt="Logo" />
@@ -24,6 +25,7 @@
       <span class="text-lg md:text-2xl font-bold truncate">Fanfare La Boucalaise</span>
     </a>
 
+    <!-- Bouton menu (mobile) -->
     <button id="menuBtn"
       class="md:hidden inline-flex items-center justify-center p-2 rounded hover:bg-green-600"
       aria-label="Ouvrir le menu">
@@ -32,6 +34,7 @@
       </svg>
     </button>
 
+    <!-- Liens (desktop) -->
     <div class="hidden md:flex gap-6 text-sm">
       <a href="index.html" class="hover:underline">Accueil</a>
       <a href="fanfare.html" class="hover:underline">La Fanfare</a>
@@ -42,6 +45,7 @@
     </div>
   </div>
 
+  <!-- Menu mobile (dépliable) -->
   <div id="mobileMenu" class="md:hidden hidden mt-4 space-y-2 text-sm">
     <a href="index.html" class="block px-3 py-2 rounded hover:bg-green-600">Accueil</a>
     <a href="fanfare.html" class="block px-3 py-2 rounded hover:bg-green-600">La Fanfare</a>
@@ -63,6 +67,7 @@
   <h1 class="text-4xl font-bold mb-2">🎼 Les Pupitres</h1>
   <p class="text-lg text-gray-700 mb-6">Explorez la diversité musicale de La Boucalaise</p>
 
+  <!-- Liens de navigation vers les pupitres -->
   <div class="flex flex-wrap justify-center gap-4 text-sm md:text-base">
     <a href="#PERCUSSIONS" class="text-green-700 font-semibold hover:underline">PERCUSSIONS</a>
     <a href="#FLUTES" class="text-green-700 font-semibold hover:underline">FLUTES</a>
@@ -73,26 +78,24 @@
     <a href="#TROMBONES" class="text-green-700 font-semibold hover:underline">TROMBONES</a>
     <a href="#BASSON" class="text-green-700 font-semibold hover:underline">BASSON</a>
     <a href="#SOUBASSOPHONES" class="text-green-700 font-semibold hover:underline">SOUBASSOPHONES</a>
-    <a href="#MEMBRES_BENEVOLES" class="text-green-700 font-semibold hover:underline">MEMBRES & BENEVOLES</a>
+    <a href="#MEMBRES_BENEVOLES" class="text-green-700 font-semibold hover:underline">MEMBRES &amp; BENEVOLES</a>
   </div>
 </section>
 
 <!-- Pupitres section -->
 <section class="px-6 space-y-16">
 
-  <!-- ✅ CLASSE À RÉUTILISER : 3 musiciens max par ligne (mobile/tablette), + sur PC -->
-  <!-- grid: 1 col (très petit), 2 cols (mobile), 3 cols (tablette), 4+ (PC) -->
-  <!-- items centrés + textes limités à la largeur de la photo -->
-  <!-- IMPORTANT : on garde tes photos en w-36 h-36 -->
-  <!-- Utilisation : remplace seulement tes "flex flex-wrap ..." par ceci : -->
-  <!-- class="grid gap-8 justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4" -->
+  <!-- ✅ Grille: 1 / 2 / 3 colonnes (max 3 par ligne) -->
+  <!-- Utilisée partout ci-dessous -->
+  <!-- class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center pt-6" -->
 
   <!-- PERCUSSIONS -->
   <div class="border-t border-green-200"></div>
   <div id="PERCUSSIONS" class="space-y-6">
     <h2 class="text-2xl font-bold text-green-700 text-center">Les Percussions</h2>
 
-    <div class="grid gap-8 justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center pt-6">
+
       <div class="text-center w-40">
         <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Andrès_Espinoza.jpg" alt="Andrès ESPINOZA"
              class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
@@ -152,7 +155,7 @@
              class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
         <p class="font-semibold mt-2">Murielle <span class="uppercase">MATTOS</span></p>
         <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Un vrai travail d'équipe avec comme "récompense" des sourires et mouvements de corps garantis"
+          "Un vrai travail d'équipe avec comme &quot;récompense&quot; des sourires et mouvements de corps garantis"
         </p>
       </div>
 
@@ -175,11 +178,13 @@
       </div>
 
       <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/unknown" alt="Cécile BEHERETCHE"
+        <!-- Mets ici ton vrai fichier "unknown" (ex: unknown.jpg) -->
+        <img src="img/Musiciens/MUSICIENS/unknown.jpg" alt="Cécile BEHERETCHE"
              class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
         <p class="font-semibold mt-2">Cécile <span class="uppercase">BEHERETCHE</span></p>
         <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">""</p>
       </div>
+
     </div>
   </div>
 
@@ -188,7 +193,8 @@
   <div id="FLUTES" class="space-y-6">
     <h2 class="text-2xl font-bold text-green-700 text-center">Les Flutes</h2>
 
-    <div class="grid gap-8 justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center pt-6">
+
       <div class="text-center w-40">
         <img src="img/Musiciens/MUSICIENS/FLUTES/Anais_Cloux.jpg" alt="Anais CLOUX"
              class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
@@ -251,6 +257,7 @@
           "Les boucalais c'est que de l'amour"
         </p>
       </div>
+
     </div>
   </div>
 
@@ -259,9 +266,10 @@
   <div id="SAXOPHONES" class="space-y-6">
     <h2 class="text-2xl font-bold text-green-700 text-center">Les Saxophones</h2>
 
-    <div class="grid gap-8 justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center pt-6">
+
       <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/SAXOPHONES/Carine_Pécastaings.jpg" alt="Carine PECASTAINGS"
+        <img src="img/Musiciens/MUSICIENS/SAXOPHONES/Carine_Pécastaings.jpg" alt="Carine PECASTAING"
              class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
         <p class="font-semibold mt-2">Carine <span class="uppercase">PECASTAING</span></p>
         <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
@@ -295,6 +303,7 @@
           "La vie en rose, en paillettes et en musique!"
         </p>
       </div>
+
     </div>
   </div>
 
@@ -303,7 +312,8 @@
   <div id="SAXHORN" class="space-y-6">
     <h2 class="text-2xl font-bold text-green-700 text-center">Les Saxhorns</h2>
 
-    <div class="grid gap-8 justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center pt-6">
+
       <div class="text-center w-40">
         <img src="img/Musiciens/MUSICIENS/SAXHORN/Aude_Alonso.jpg" alt="Aude ALONSO"
              class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
@@ -330,6 +340,7 @@
           "La musique une histoire de famille!"
         </p>
       </div>
+
     </div>
   </div>
 
@@ -338,7 +349,8 @@
   <div id="TROMPETTES" class="space-y-6">
     <h2 class="text-2xl font-bold text-green-700 text-center">Les Trompettes</h2>
 
-    <div class="grid gap-8 justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center pt-6">
+
       <div class="text-center w-40">
         <img src="img/Musiciens/MUSICIENS/TROMPETTES/Cécile_Pécastaing.jpg" alt="Cécile PECASTAING"
              class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
@@ -390,25 +402,26 @@
       </div>
 
       <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/unknown" alt="Jérome LEIZA"
+        <img src="img/Musiciens/MUSICIENS/unknown.jpg" alt="Jérome LEIZA"
              class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
         <p class="font-semibold mt-2">Jérome <span class="uppercase">LEIZA</span></p>
         <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">" "</p>
       </div>
 
       <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/unknown" alt="Romain DUCASSOU"
+        <img src="img/Musiciens/MUSICIENS/unknown.jpg" alt="Romain DUCASSOU"
              class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
         <p class="font-semibold mt-2">Romain <span class="uppercase">DUCASSOU</span></p>
         <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">" "</p>
       </div>
 
       <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/unknown" alt="Lionel MILLOX"
+        <img src="img/Musiciens/MUSICIENS/unknown.jpg" alt="Lionel MILLOX"
              class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
         <p class="font-semibold mt-2">Lionel <span class="uppercase">MILLOX</span></p>
         <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">" "</p>
       </div>
+
     </div>
   </div>
 
@@ -417,7 +430,8 @@
   <div id="EUPHONIUMS" class="space-y-6">
     <h2 class="text-2xl font-bold text-green-700 text-center">Les Euphoniums</h2>
 
-    <div class="grid gap-8 justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center pt-6">
+
       <div class="text-center w-40">
         <img src="img/Musiciens/MUSICIENS/EUPHONIUMS/Christophe_Lohmann.jpg" alt="Christophe LOHMANN"
              class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
@@ -451,6 +465,7 @@
           "Telle une note sur la partition, portée par une fanfare qui a le cœur d'une famille"
         </p>
       </div>
+
     </div>
   </div>
 
@@ -459,7 +474,8 @@
   <div id="TROMBONES" class="space-y-6">
     <h2 class="text-2xl font-bold text-green-700 text-center">Les Trombones</h2>
 
-    <div class="grid gap-8 justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center pt-6">
+
       <div class="text-center w-40">
         <img src="img/Musiciens/MUSICIENS/TROMBONES/Augustin_Alonso.jpg" alt="Augustin ALONSO"
              class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
@@ -482,8 +498,11 @@
         <img src="img/Musiciens/MUSICIENS/TROMBONES/Xavier_Miqueu.jpg" alt="Xavier MIQUEU"
              class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
         <p class="font-semibold mt-2">Xavier <span class="uppercase">MIQUEU</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">"Xavier tromboniste vintage"</p>
+        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
+          "Xavier tromboniste vintage"
+        </p>
       </div>
+
     </div>
   </div>
 
@@ -492,7 +511,7 @@
   <div id="BASSON" class="space-y-6">
     <h2 class="text-2xl font-bold text-green-700 text-center">Les Bassons</h2>
 
-    <div class="grid gap-8 justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center pt-6">
       <div class="text-center w-40">
         <img src="img/Musiciens/MUSICIENS/BASSON/Léonie_Miqueu.jpg" alt="Léonie MIQUEU"
              class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
@@ -505,9 +524,10 @@
   <!-- SOUBASSOPHONES -->
   <div class="border-t border-green-200"></div>
   <div id="SOUBASSOPHONES" class="space-y-6">
-    <h2 class="text-2xl font-bold text-green-700 text-center">Les SOUBASSOPHONES</h2>
+    <h2 class="text-2xl font-bold text-green-700 text-center">Les Soubassophones</h2>
 
-    <div class="grid gap-8 justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center pt-6">
+
       <div class="text-center w-40">
         <img src="img/Musiciens/MUSICIENS/SOUBASSOPHONES/Claude_Larre.jpg" alt="Claude LARRE"
              class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
@@ -532,15 +552,16 @@
           "Des années de fanfare, de copains et de bonne humeur : plus qu’un groupe, une famille en musique !"
         </p>
       </div>
+
     </div>
   </div>
 
   <!-- MEMBRES & BENEVOLES -->
   <div class="border-t border-green-200"></div>
   <div id="MEMBRES_BENEVOLES" class="space-y-6">
-    <h2 class="text-2xl font-bold text-green-700 text-center">Nos Membres & Bénévoles</h2>
+    <h2 class="text-2xl font-bold text-green-700 text-center">Nos Membres &amp; Bénévoles</h2>
 
-    <div class="grid gap-8 justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center pt-6">
 
       <div class="text-center w-40">
         <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Christianne_Bacqué.jpg" alt="Christianne BACQUE"
@@ -595,6 +616,7 @@
         <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">""</p>
       </div>
 
+      <!-- Benevoles -->
       <div class="text-center w-40">
         <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Lucas_Lafeu.jpg" alt="Lucas LAFEU"
              class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">

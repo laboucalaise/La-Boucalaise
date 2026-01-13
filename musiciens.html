@@ -5,9 +5,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pupitres - La Boucalaise</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
     .shadow-green {
       box-shadow: 0 4px 6px -1px rgba(34, 197, 94, 0.4), 0 2px 4px -2px rgba(34, 197, 94, 0.3);
+    }
+
+    /* ✅ Grille ultra-dynamique :
+       - Mobile : min plus petit => 2-3 par ligne selon écran
+       - Ordi : aucune limite => auto-fit remplit l’espace */
+    .mus-grid{
+      display: grid;
+      gap: 1.25rem;
+      justify-items: center;
+      align-items: start;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+    @media (min-width: 640px){ /* sm */
+      .mus-grid{ grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+    }
+    @media (min-width: 1024px){ /* lg */
+      .mus-grid{ grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+    }
+
+    /* ✅ Carte musicien */
+    .mus-card{
+      text-align: center;
+      width: 100%;
+      max-width: 190px;
+    }
+
+    /* ✅ Photo responsive */
+    .mus-photo{
+      width: 88px; height: 88px;          /* mobile */
+      border-radius: 9999px;
+      margin: 0 auto;
+      background: white;
+      object-fit: contain;
+    }
+    @media (min-width: 640px){ /* sm */
+      .mus-photo{ width: 112px; height: 112px; }
+    }
+    @media (min-width: 1024px){ /* lg */
+      .mus-photo{ width: 144px; height: 144px; }
+    }
+
+    /* ✅ Nom responsive */
+    .mus-name{
+      margin-top: .5rem;
+      font-weight: 600;
+      font-size: .95rem; /* mobile */
+      line-height: 1.2;
+    }
+    @media (min-width: 640px){
+      .mus-name{ font-size: 1rem; }
+    }
+
+    /* ✅ Citation : jamais plus large que la photo */
+    .mus-quote{
+      margin: .35rem auto 0;
+      width: 100%;
+      max-width: 100px; /* mobile (≈ photo) */
+      font-size: .72rem;
+      color: #4b5563;
+      font-style: italic;
+      line-height: 1.25;
+      word-break: break-word;
+    }
+    @media (min-width: 640px){
+      .mus-quote{ max-width: 120px; font-size: .8rem; }
+    }
+    @media (min-width: 1024px){
+      .mus-quote{ max-width: 150px; font-size: .875rem; }
     }
   </style>
 </head>
@@ -38,7 +107,7 @@
     <div class="hidden md:flex gap-6 text-sm">
       <a href="index.html" class="hover:underline">Accueil</a>
       <a href="fanfare.html" class="hover:underline">La Fanfare</a>
-      <a href="musiciens.html" class="hover:underline font-bold">Nos Musiciens</a>
+      <a href="musiciens.html" class="hover:underline font-bold underline">Nos Musiciens</a>
       <a href="morceaux.html" class="hover:underline">Nos Morceaux</a>
       <a href="sponsors.html" class="hover:underline">Nos Sponsors</a>
       <a href="rejoindre.html" class="hover:underline">Nous Rejoindre</a>
@@ -67,7 +136,6 @@
   <h1 class="text-4xl font-bold mb-2">🎼 Les Pupitres</h1>
   <p class="text-lg text-gray-700 mb-6">Explorez la diversité musicale de La Boucalaise</p>
 
-  <!-- Liens de navigation vers les pupitres -->
   <div class="flex flex-wrap justify-center gap-4 text-sm md:text-base">
     <a href="#PERCUSSIONS" class="text-green-700 font-semibold hover:underline">PERCUSSIONS</a>
     <a href="#FLUTES" class="text-green-700 font-semibold hover:underline">FLUTES</a>
@@ -82,182 +150,123 @@
   </div>
 </section>
 
-<!-- Pupitres section -->
 <section class="px-6 space-y-16">
-
-  <!-- ✅ Grille: 1 / 2 / 3 colonnes (max 3 par ligne) -->
-  <!-- Utilisée partout ci-dessous -->
-  <!-- class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center pt-6" -->
 
   <!-- PERCUSSIONS -->
   <div class="border-t border-green-200"></div>
   <div id="PERCUSSIONS" class="space-y-6">
     <h2 class="text-2xl font-bold text-green-700 text-center">Les Percussions</h2>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center pt-6">
-
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Andrès_Espinoza.jpg" alt="Andrès ESPINOZA"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Andrès <span class="uppercase">ESPINOZA</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "La percussion frappe comme la vie : parfois douce, parfois brutale, mais toujours elle fait vibrer l'âme"
-        </p>
+    <div class="mus-grid pt-6">
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Andrès_Espinoza.jpg" alt="Andrès ESPINOZA" class="mus-photo shadow-green">
+        <p class="mus-name">Andrès <span class="uppercase">ESPINOZA</span></p>
+        <p class="mus-quote">"La percussion frappe comme la vie : parfois douce, parfois brutale, mais toujours elle fait vibrer l'âme"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Carole_Lohmann.jpg" alt="Carole LOHMANN"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Carole <span class="uppercase">LOHMANN</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "La musique rythme ma vie de maman multicasquette, toujours prête à rire et s'amuser"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Carole_Lohmann.jpg" alt="Carole LOHMANN" class="mus-photo shadow-green">
+        <p class="mus-name">Carole <span class="uppercase">LOHMANN</span></p>
+        <p class="mus-quote">"La musique rythme ma vie de maman multicasquette, toujours prête à rire et s'amuser"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Frédéric_Mamert.jpg" alt="Frédéric MAMERT"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Frédéric <span class="uppercase">MAMERT</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Si la fanfare était un corps, nous percussionnistes nous sommes le cœur qui bat"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Frédéric_Mamert.jpg" alt="Frédéric MAMERT" class="mus-photo shadow-green">
+        <p class="mus-name">Frédéric <span class="uppercase">MAMERT</span></p>
+        <p class="mus-quote">"Si la fanfare était un corps, nous percussionnistes nous sommes le cœur qui bat"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Iban_Carrera.jpg" alt="Iban CARRERA"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Iban <span class="uppercase">CARRERA</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Trop heureux de faire de la musique avec maman et papi !"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Iban_Carrera.jpg" alt="Iban CARRERA" class="mus-photo shadow-green">
+        <p class="mus-name">Iban <span class="uppercase">CARRERA</span></p>
+        <p class="mus-quote">"Trop heureux de faire de la musique avec maman et papi !"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Marielle_Laborde.jpg" alt="Marielle LABORDE"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Marielle <span class="uppercase">LABORDE</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Cymbaliste rêvant un jour d'ouvrir une OLA !"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Marielle_Laborde.jpg" alt="Marielle LABORDE" class="mus-photo shadow-green">
+        <p class="mus-name">Marielle <span class="uppercase">LABORDE</span></p>
+        <p class="mus-quote">"Cymbaliste rêvant un jour d'ouvrir une OLA !"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Mathieu_Espiaube.jpg" alt="Mathieu ESPIAUBE"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Mathieu <span class="uppercase">ESPIAUBE</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Je tape partout, sauf sur les nerfs !"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Mathieu_Espiaube.jpg" alt="Mathieu ESPIAUBE" class="mus-photo shadow-green">
+        <p class="mus-name">Mathieu <span class="uppercase">ESPIAUBE</span></p>
+        <p class="mus-quote">"Je tape partout, sauf sur les nerfs !"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Murielle_Mattos.jpg" alt="Murielle MATTOS"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Murielle <span class="uppercase">MATTOS</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Un vrai travail d'équipe avec comme &quot;récompense&quot; des sourires et mouvements de corps garantis"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Murielle_Mattos.jpg" alt="Murielle MATTOS" class="mus-photo shadow-green">
+        <p class="mus-name">Murielle <span class="uppercase">MATTOS</span></p>
+        <p class="mus-quote">"Un vrai travail d'équipe avec comme &quot;récompense&quot; des sourires et mouvements de corps garantis"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Roberto_Mattos.jpg" alt="Roberto MATTOS"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Roberto <span class="uppercase">MATTOS</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Je tambourine à la porte . Tu tambourines sur la table. Il tambourine avec enthousiasme. Nous tambourinons en rythme"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Roberto_Mattos.jpg" alt="Roberto MATTOS" class="mus-photo shadow-green">
+        <p class="mus-name">Roberto <span class="uppercase">MATTOS</span></p>
+        <p class="mus-quote">"Je tambourine à la porte... nous tambourinons en rythme"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Yves_Jammaerts.jpg" alt="Yves JAMMAERTS"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Yves <span class="uppercase">JAMMAERTS</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Je cogne, les amis soufflent, on est heureux"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/PERCUSSIONS/Yves_Jammaerts.jpg" alt="Yves JAMMAERTS" class="mus-photo shadow-green">
+        <p class="mus-name">Yves <span class="uppercase">JAMMAERTS</span></p>
+        <p class="mus-quote">"Je cogne, les amis soufflent, on est heureux"</p>
       </div>
 
-      <div class="text-center w-40">
-        <!-- Mets ici ton vrai fichier "unknown" (ex: unknown.jpg) -->
-        <img src="img/Musiciens/MUSICIENS/unknown.jpg" alt="Cécile BEHERETCHE"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Cécile <span class="uppercase">BEHERETCHE</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">""</p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/unknown.jpg" alt="Cécile BEHERETCHE" class="mus-photo shadow-green">
+        <p class="mus-name">Cécile <span class="uppercase">BEHERETCHE</span></p>
+        <p class="mus-quote">""</p>
       </div>
-
     </div>
   </div>
 
   <!-- FLUTES -->
   <div class="border-t border-green-200"></div>
   <div id="FLUTES" class="space-y-6">
-    <h2 class="text-2xl font-bold text-green-700 text-center">Les Flutes</h2>
+    <h2 class="text-2xl font-bold text-green-700 text-center">Les Flûtes</h2>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center pt-6">
-
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/FLUTES/Anais_Cloux.jpg" alt="Anais CLOUX"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Anais <span class="uppercase">CLOUX</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "La musique : le petit truc en plus qui fait rayonner ma vie"
-        </p>
+    <div class="mus-grid pt-6">
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/FLUTES/Anais_Cloux.jpg" alt="Anais CLOUX" class="mus-photo shadow-green">
+        <p class="mus-name">Anais <span class="uppercase">CLOUX</span></p>
+        <p class="mus-quote">"La musique : le petit truc en plus qui fait rayonner ma vie"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/FLUTES/Chloé_Tauzia.jpg" alt="Chloé TAUZIA"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Chloé <span class="uppercase">TAUZIA</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Jouer à la Boucalaise, c'est le top du top !"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/FLUTES/Chloé_Tauzia.jpg" alt="Chloé TAUZIA" class="mus-photo shadow-green">
+        <p class="mus-name">Chloé <span class="uppercase">TAUZIA</span></p>
+        <p class="mus-quote">"Jouer à la Boucalaise, c'est le top du top !"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/FLUTES/Corinne_Aleu.jpg" alt="Corinne ALEU"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Corinne <span class="uppercase">ALEU</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Jouer de la musique apporte un équilibre à ma vie et un peu de joie à ceux qui l'écoutent. Une petite bulle de bonheur pour tous"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/FLUTES/Corinne_Aleu.jpg" alt="Corinne ALEU" class="mus-photo shadow-green">
+        <p class="mus-name">Corinne <span class="uppercase">ALEU</span></p>
+        <p class="mus-quote">"Une petite bulle de bonheur pour tous"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/FLUTES/Céline_Nabias.jpg" alt="Céline NABIAS"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Céline <span class="uppercase">NABIAS</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Bébé, fatiguée mais toujours autant l'envie de jouer"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/FLUTES/Céline_Nabias.jpg" alt="Céline NABIAS" class="mus-photo shadow-green">
+        <p class="mus-name">Céline <span class="uppercase">NABIAS</span></p>
+        <p class="mus-quote">"Bébé, fatiguée mais toujours autant l'envie de jouer"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/FLUTES/Emma_Nabias.jpg" alt="Emma NABIAS"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Emma <span class="uppercase">NABIAS</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "J'adore aller à la fanfare avec maman et mes copines"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/FLUTES/Emma_Nabias.jpg" alt="Emma NABIAS" class="mus-photo shadow-green">
+        <p class="mus-name">Emma <span class="uppercase">NABIAS</span></p>
+        <p class="mus-quote">"J'adore aller à la fanfare avec maman et mes copines"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/FLUTES/Justie_Jammaerts.jpg" alt="Justine JAMMAERTS"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Justine <span class="uppercase">JAMMAERTS</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "J’aime la musique, j’aime rire… et quand les deux se mélangent, c’est le top du top!"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/FLUTES/Justie_Jammaerts.jpg" alt="Justine JAMMAERTS" class="mus-photo shadow-green">
+        <p class="mus-name">Justine <span class="uppercase">JAMMAERTS</span></p>
+        <p class="mus-quote">"Quand les deux se mélangent, c’est le top du top!"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/FLUTES/Lucile_Pécastaing.jpg" alt="Lucile PECASTAING"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Lucile <span class="uppercase">PECASTAING</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Les boucalais c'est que de l'amour"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/FLUTES/Lucile_Pécastaing.jpg" alt="Lucile PECASTAING" class="mus-photo shadow-green">
+        <p class="mus-name">Lucile <span class="uppercase">PECASTAING</span></p>
+        <p class="mus-quote">"Les boucalais c'est que de l'amour"</p>
       </div>
-
     </div>
   </div>
 
@@ -266,44 +275,30 @@
   <div id="SAXOPHONES" class="space-y-6">
     <h2 class="text-2xl font-bold text-green-700 text-center">Les Saxophones</h2>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center pt-6">
-
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/SAXOPHONES/Carine_Pécastaings.jpg" alt="Carine PECASTAING"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Carine <span class="uppercase">PECASTAING</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Comme dans une famille, la musique crée des souvenirs, rassemble et résonne dans nos cœurs"
-        </p>
+    <div class="mus-grid pt-6">
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/SAXOPHONES/Carine_Pécastaings.jpg" alt="Carine PECASTAING" class="mus-photo shadow-green">
+        <p class="mus-name">Carine <span class="uppercase">PECASTAING</span></p>
+        <p class="mus-quote">"La musique crée des souvenirs, rassemble et résonne"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/SAXOPHONES/Catherine_Perlinski.jpg" alt="Catherine PERLINSKI"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Catherine <span class="uppercase">PERLINSKI</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "J'ai perdu le do de ma clarinette"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/SAXOPHONES/Catherine_Perlinski.jpg" alt="Catherine PERLINSKI" class="mus-photo shadow-green">
+        <p class="mus-name">Catherine <span class="uppercase">PERLINSKI</span></p>
+        <p class="mus-quote">"J'ai perdu le do de ma clarinette"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/SAXOPHONES/Charlène_Sarrailh.jpg" alt="Charlène SARRAILH"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Charlène <span class="uppercase">SARRAILH</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Saxophoniste : je souffle dans un tuyau et, parfois, ça fait de la musique"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/SAXOPHONES/Charlène_Sarrailh.jpg" alt="Charlène SARRAILH" class="mus-photo shadow-green">
+        <p class="mus-name">Charlène <span class="uppercase">SARRAILH</span></p>
+        <p class="mus-quote">"Je souffle dans un tuyau et parfois ça fait de la musique"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/SAXOPHONES/Laura_Jammaerts.jpg" alt="Laura JAMMAERTS"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Laura <span class="uppercase">JAMMAERTS</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "La vie en rose, en paillettes et en musique!"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/SAXOPHONES/Laura_Jammaerts.jpg" alt="Laura JAMMAERTS" class="mus-photo shadow-green">
+        <p class="mus-name">Laura <span class="uppercase">JAMMAERTS</span></p>
+        <p class="mus-quote">"La vie en rose, en paillettes et en musique!"</p>
       </div>
-
     </div>
   </div>
 
@@ -312,35 +307,24 @@
   <div id="SAXHORN" class="space-y-6">
     <h2 class="text-2xl font-bold text-green-700 text-center">Les Saxhorns</h2>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center pt-6">
-
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/SAXHORN/Aude_Alonso.jpg" alt="Aude ALONSO"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Aude <span class="uppercase">ALONSO</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Entre fanfare, famille et flamenco, ma vie est un rythme continuel"
-        </p>
+    <div class="mus-grid pt-6">
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/SAXHORN/Aude_Alonso.jpg" alt="Aude ALONSO" class="mus-photo shadow-green">
+        <p class="mus-name">Aude <span class="uppercase">ALONSO</span></p>
+        <p class="mus-quote">"Entre fanfare, famille et flamenco, ma vie est un rythme continuel"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/SAXHORN/Bernard_Bacqué.jpg" alt="Bernard BACQUET"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Bernard <span class="uppercase">BACQUET</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Depuis l'âge de 7 ans toujours immergé dans la musique"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/SAXHORN/Bernard_Bacqué.jpg" alt="Bernard BACQUET" class="mus-photo shadow-green">
+        <p class="mus-name">Bernard <span class="uppercase">BACQUET</span></p>
+        <p class="mus-quote">"Depuis l'âge de 7 ans toujours immergé dans la musique"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/SAXHORN/Marina_Carrera.jpg" alt="Marina CARRERA"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Marina <span class="uppercase">CARRERA</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "La musique une histoire de famille!"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/SAXHORN/Marina_Carrera.jpg" alt="Marina CARRERA" class="mus-photo shadow-green">
+        <p class="mus-name">Marina <span class="uppercase">CARRERA</span></p>
+        <p class="mus-quote">"La musique une histoire de famille!"</p>
       </div>
-
     </div>
   </div>
 
@@ -349,79 +333,60 @@
   <div id="TROMPETTES" class="space-y-6">
     <h2 class="text-2xl font-bold text-green-700 text-center">Les Trompettes</h2>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center pt-6">
-
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/TROMPETTES/Cécile_Pécastaing.jpg" alt="Cécile PECASTAING"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Cécile <span class="uppercase">PECASTAING</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Maman à mille à l'heure, énergie débordante, je fais résonner ma trompette comme je vis : avec générosité et passion"
-        </p>
+    <div class="mus-grid pt-6">
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/TROMPETTES/Cécile_Pécastaing.jpg" alt="Cécile PECASTAING" class="mus-photo shadow-green">
+        <p class="mus-name">Cécile <span class="uppercase">PECASTAING</span></p>
+        <p class="mus-quote">"Je fais résonner ma trompette comme je vis : avec générosité et passion"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/TROMPETTES/Elena_Alonso.jpg" alt="Elena ALONSO"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Elena <span class="uppercase">ALONSO</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Je vis au rythme des notes que je créé"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/TROMPETTES/Elena_Alonso.jpg" alt="Elena ALONSO" class="mus-photo shadow-green">
+        <p class="mus-name">Elena <span class="uppercase">ALONSO</span></p>
+        <p class="mus-quote">"Je vis au rythme des notes que je créé"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/TROMPETTES/Jean_Michel_Jolliberry.jpg" alt="Jean-Michel JOLLIBERRY"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Jean-Michel <span class="uppercase">JOLLIBERRY</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">" "</p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/TROMPETTES/Jean_Michel_Jolliberry.jpg" alt="Jean-Michel JOLLIBERRY" class="mus-photo shadow-green">
+        <p class="mus-name">Jean-Michel <span class="uppercase">JOLLIBERRY</span></p>
+        <p class="mus-quote">" "</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/TROMPETTES/Jean_Pierre_Cassasus.jpg" alt="Jean-Pierre CASSASUS"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Jean-Pierre <span class="uppercase">CASSASUS</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">" "</p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/TROMPETTES/Jean_Pierre_Cassasus.jpg" alt="Jean-Pierre CASSASUS" class="mus-photo shadow-green">
+        <p class="mus-name">Jean-Pierre <span class="uppercase">CASSASUS</span></p>
+        <p class="mus-quote">" "</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/TROMPETTES/Jérémie_Eliet.jpg" alt="Jérémie ELIET"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Jérémie <span class="uppercase">ELIET</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Ola que tal, me llamo Rérémie , a mi me gusta la musica y mis amigos!"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/TROMPETTES/Jérémie_Eliet.jpg" alt="Jérémie ELIET" class="mus-photo shadow-green">
+        <p class="mus-name">Jérémie <span class="uppercase">ELIET</span></p>
+        <p class="mus-quote">"Ola que tal, me llamo Rérémie..."</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/TROMPETTES/Pascale_Bartheu.jpg" alt="Pascale BARTHEU"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Pascale <span class="uppercase">BARTHEU</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Ambitieuse, je prends plaisir à embarquer la troupe dans mes délires musicaux et chorégraphiques (je garde espoir ! …)"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/TROMPETTES/Pascale_Bartheu.jpg" alt="Pascale BARTHEU" class="mus-photo shadow-green">
+        <p class="mus-name">Pascale <span class="uppercase">BARTHEU</span></p>
+        <p class="mus-quote">"J’embarque la troupe dans mes délires (je garde espoir ! …)"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/unknown.jpg" alt="Jérome LEIZA"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Jérome <span class="uppercase">LEIZA</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">" "</p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/unknown.jpg" alt="Jérome LEIZA" class="mus-photo shadow-green">
+        <p class="mus-name">Jérome <span class="uppercase">LEIZA</span></p>
+        <p class="mus-quote">" "</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/unknown.jpg" alt="Romain DUCASSOU"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Romain <span class="uppercase">DUCASSOU</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">" "</p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/unknown.jpg" alt="Romain DUCASSOU" class="mus-photo shadow-green">
+        <p class="mus-name">Romain <span class="uppercase">DUCASSOU</span></p>
+        <p class="mus-quote">" "</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/unknown.jpg" alt="Lionel MILLOX"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Lionel <span class="uppercase">MILLOX</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">" "</p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/unknown.jpg" alt="Lionel MILLOX" class="mus-photo shadow-green">
+        <p class="mus-name">Lionel <span class="uppercase">MILLOX</span></p>
+        <p class="mus-quote">" "</p>
       </div>
-
     </div>
   </div>
 
@@ -430,42 +395,30 @@
   <div id="EUPHONIUMS" class="space-y-6">
     <h2 class="text-2xl font-bold text-green-700 text-center">Les Euphoniums</h2>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center pt-6">
-
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/EUPHONIUMS/Christophe_Lohmann.jpg" alt="Christophe LOHMANN"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Christophe <span class="uppercase">LOHMANN</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">"Music connects people"</p>
+    <div class="mus-grid pt-6">
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/EUPHONIUMS/Christophe_Lohmann.jpg" alt="Christophe LOHMANN" class="mus-photo shadow-green">
+        <p class="mus-name">Christophe <span class="uppercase">LOHMANN</span></p>
+        <p class="mus-quote">"Music connects people"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/EUPHONIUMS/Claude_Alonso.jpg" alt="Claude ALONSO"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Claude <span class="uppercase">ALONSO</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Je mets le courant au travail et le souffle à la fanfare"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/EUPHONIUMS/Claude_Alonso.jpg" alt="Claude ALONSO" class="mus-photo shadow-green">
+        <p class="mus-name">Claude <span class="uppercase">ALONSO</span></p>
+        <p class="mus-quote">"Je mets le courant au travail et le souffle à la fanfare"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/EUPHONIUMS/Eric_Duclaux.jpg" alt="Eric DUCLAUX"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Eric <span class="uppercase">DUCLAUX</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Une grande famille, des musiciennes et musiciens au top !!"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/EUPHONIUMS/Eric_Duclaux.jpg" alt="Eric DUCLAUX" class="mus-photo shadow-green">
+        <p class="mus-name">Eric <span class="uppercase">DUCLAUX</span></p>
+        <p class="mus-quote">"Une grande famille, des musiciennes et musiciens au top !!"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/EUPHONIUMS/Mélanie_Badie.jpg" alt="Mélanie BADIE"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Mélanie <span class="uppercase">BADIE</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Telle une note sur la partition, portée par une fanfare qui a le cœur d'une famille"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/EUPHONIUMS/Mélanie_Badie.jpg" alt="Mélanie BADIE" class="mus-photo shadow-green">
+        <p class="mus-name">Mélanie <span class="uppercase">BADIE</span></p>
+        <p class="mus-quote">"Portée par une fanfare qui a le cœur d'une famille"</p>
       </div>
-
     </div>
   </div>
 
@@ -474,35 +427,24 @@
   <div id="TROMBONES" class="space-y-6">
     <h2 class="text-2xl font-bold text-green-700 text-center">Les Trombones</h2>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center pt-6">
-
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/TROMBONES/Augustin_Alonso.jpg" alt="Augustin ALONSO"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Augustin <span class="uppercase">ALONSO</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "9 ans, tromboniste à la fanfare : bras longs, coulisse rapide et je fais plus de bruit que les supporters dans un stade de foot"
-        </p>
+    <div class="mus-grid pt-6">
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/TROMBONES/Augustin_Alonso.jpg" alt="Augustin ALONSO" class="mus-photo shadow-green">
+        <p class="mus-name">Augustin <span class="uppercase">ALONSO</span></p>
+        <p class="mus-quote">"Bras longs, coulisse rapide et je fais plus de bruit que les supporters"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/TROMBONES/Julen_Larre_Lorenzi.jpg" alt="Julen LARRE LORENZI"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Julen <span class="uppercase">LARRE LORENZI</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Si on te dit que tu fais trop de bruit, dit que t'es tromboniste : le silence c'est pour les autres!"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/TROMBONES/Julen_Larre_Lorenzi.jpg" alt="Julen LARRE LORENZI" class="mus-photo shadow-green">
+        <p class="mus-name">Julen <span class="uppercase">LARRE LORENZI</span></p>
+        <p class="mus-quote">"Le silence c'est pour les autres!"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/TROMBONES/Xavier_Miqueu.jpg" alt="Xavier MIQUEU"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Xavier <span class="uppercase">MIQUEU</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Xavier tromboniste vintage"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/TROMBONES/Xavier_Miqueu.jpg" alt="Xavier MIQUEU" class="mus-photo shadow-green">
+        <p class="mus-name">Xavier <span class="uppercase">MIQUEU</span></p>
+        <p class="mus-quote">"Xavier tromboniste vintage"</p>
       </div>
-
     </div>
   </div>
 
@@ -511,12 +453,11 @@
   <div id="BASSON" class="space-y-6">
     <h2 class="text-2xl font-bold text-green-700 text-center">Les Bassons</h2>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center pt-6">
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/BASSON/Léonie_Miqueu.jpg" alt="Léonie MIQUEU"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Léonie <span class="uppercase">MIQUEU</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">"Léonie super bassonnette"</p>
+    <div class="mus-grid pt-6">
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/BASSON/Léonie_Miqueu.jpg" alt="Léonie MIQUEU" class="mus-photo shadow-green">
+        <p class="mus-name">Léonie <span class="uppercase">MIQUEU</span></p>
+        <p class="mus-quote">"Léonie super bassonnette"</p>
       </div>
     </div>
   </div>
@@ -526,33 +467,24 @@
   <div id="SOUBASSOPHONES" class="space-y-6">
     <h2 class="text-2xl font-bold text-green-700 text-center">Les Soubassophones</h2>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center pt-6">
-
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/SOUBASSOPHONES/Claude_Larre.jpg" alt="Claude LARRE"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Claude <span class="uppercase">LARRE</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">" "</p>
+    <div class="mus-grid pt-6">
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/SOUBASSOPHONES/Claude_Larre.jpg" alt="Claude LARRE" class="mus-photo shadow-green">
+        <p class="mus-name">Claude <span class="uppercase">LARRE</span></p>
+        <p class="mus-quote">" "</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/SOUBASSOPHONES/Eric_Couanon.jpg" alt="Eric COUANON"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Eric <span class="uppercase">COUANON</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Toutes ces années à faire résonner clairon, cor basse et souba et toujours aussi motivé et heureux de faire vivre notre belle musique La Boucalaise"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/SOUBASSOPHONES/Eric_Couanon.jpg" alt="Eric COUANON" class="mus-photo shadow-green">
+        <p class="mus-name">Eric <span class="uppercase">COUANON</span></p>
+        <p class="mus-quote">"Toujours motivé et heureux de faire vivre notre belle musique"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/SOUBASSOPHONES/Robert_Haurieu.jpg" alt="Robert HAURIEU"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Robert <span class="uppercase">HAURIEU</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Des années de fanfare, de copains et de bonne humeur : plus qu’un groupe, une famille en musique !"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/SOUBASSOPHONES/Robert_Haurieu.jpg" alt="Robert HAURIEU" class="mus-photo shadow-green">
+        <p class="mus-name">Robert <span class="uppercase">HAURIEU</span></p>
+        <p class="mus-quote">"Plus qu’un groupe, une famille en musique !"</p>
       </div>
-
     </div>
   </div>
 
@@ -561,148 +493,108 @@
   <div id="MEMBRES_BENEVOLES" class="space-y-6">
     <h2 class="text-2xl font-bold text-green-700 text-center">Nos Membres &amp; Bénévoles</h2>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center pt-6">
-
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Christianne_Bacqué.jpg" alt="Christianne BACQUE"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Christianne <span class="uppercase">BACQUE</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">""</p>
+    <div class="mus-grid pt-6">
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Christianne_Bacqué.jpg" alt="Christianne BACQUE" class="mus-photo shadow-green">
+        <p class="mus-name">Christianne <span class="uppercase">BACQUE</span></p>
+        <p class="mus-quote">""</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Christianne_Mamert.jpg" alt="Christianne MAMERT"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Christianne <span class="uppercase">MAMERT</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">""</p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Christianne_Mamert.jpg" alt="Christianne MAMERT" class="mus-photo shadow-green">
+        <p class="mus-name">Christianne <span class="uppercase">MAMERT</span></p>
+        <p class="mus-quote">""</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Daniel_Mamert.jpg" alt="Daniel MAMERT"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Daniel <span class="uppercase">MAMERT</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">""</p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Daniel_Mamert.jpg" alt="Daniel MAMERT" class="mus-photo shadow-green">
+        <p class="mus-name">Daniel <span class="uppercase">MAMERT</span></p>
+        <p class="mus-quote">""</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Arlette_Aleu.jpg" alt="Arlette ALEU"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Arlette <span class="uppercase">ALEU</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Partage et convivialité dans une bonne ambiance musicale"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Arlette_Aleu.jpg" alt="Arlette ALEU" class="mus-photo shadow-green">
+        <p class="mus-name">Arlette <span class="uppercase">ALEU</span></p>
+        <p class="mus-quote">"Partage et convivialité dans une bonne ambiance musicale"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Jean_Pierre_Aleu.jpg" alt="Jean-Pierre ALEU"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Jean-Pierre <span class="uppercase">ALEU</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Toujours agréable de se retrouver à la Boucalaise"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Jean_Pierre_Aleu.jpg" alt="Jean-Pierre ALEU" class="mus-photo shadow-green">
+        <p class="mus-name">Jean-Pierre <span class="uppercase">ALEU</span></p>
+        <p class="mus-quote">"Toujours agréable de se retrouver à la Boucalaise"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Cathy_Dufour.jpg" alt="Cathy DUFOUR"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Cathy <span class="uppercase">DUFOUR</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">""</p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Cathy_Dufour.jpg" alt="Cathy DUFOUR" class="mus-photo shadow-green">
+        <p class="mus-name">Cathy <span class="uppercase">DUFOUR</span></p>
+        <p class="mus-quote">""</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Francis_Gonzalez.jpg" alt="Francis GONZALEZ"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Francis <span class="uppercase">GONZALEZ</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">""</p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Francis_Gonzalez.jpg" alt="Francis GONZALEZ" class="mus-photo shadow-green">
+        <p class="mus-name">Francis <span class="uppercase">GONZALEZ</span></p>
+        <p class="mus-quote">""</p>
       </div>
 
-      <!-- Benevoles -->
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Lucas_Lafeu.jpg" alt="Lucas LAFEU"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Lucas <span class="uppercase">LAFEU</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "L'instrument que je maîtrise le plus c’est la tireuse à bière"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Lucas_Lafeu.jpg" alt="Lucas LAFEU" class="mus-photo shadow-green">
+        <p class="mus-name">Lucas <span class="uppercase">LAFEU</span></p>
+        <p class="mus-quote">"L'instrument que je maîtrise le plus c’est la tireuse à bière"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Gaétan_Dupruilh.jpg" alt="Gaétan DUPRUILH"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Gaétan <span class="uppercase">DUPRUILH</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Toujours une note d'avance sur l'apéro !"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Gaétan_Dupruilh.jpg" alt="Gaétan DUPRUILH" class="mus-photo shadow-green">
+        <p class="mus-name">Gaétan <span class="uppercase">DUPRUILH</span></p>
+        <p class="mus-quote">"Toujours une note d'avance sur l'apéro !"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Nicolas_Laborde.jpg" alt="Nicolas LABORDE"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Nicolas <span class="uppercase">LABORDE</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">""</p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Nicolas_Laborde.jpg" alt="Nicolas LABORDE" class="mus-photo shadow-green">
+        <p class="mus-name">Nicolas <span class="uppercase">LABORDE</span></p>
+        <p class="mus-quote">""</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Florian_Nabias.jpg" alt="Florian NABIAS"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Florian <span class="uppercase">NABIAS</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Bénévole en béton ce que je maîtrise le mieux c'est les canons !"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Florian_Nabias.jpg" alt="Florian NABIAS" class="mus-photo shadow-green">
+        <p class="mus-name">Florian <span class="uppercase">NABIAS</span></p>
+        <p class="mus-quote">"Bénévole en béton... je maîtrise le mieux c'est les canons !"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Cyril_Tauzia.jpg" alt="Cyril TAUZIA"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Cyril <span class="uppercase">TAUZIA</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Bénévole buvette: sans moi la fanfare jouerait plus juste, mais moins longtemps"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Cyril_Tauzia.jpg" alt="Cyril TAUZIA" class="mus-photo shadow-green">
+        <p class="mus-name">Cyril <span class="uppercase">TAUZIA</span></p>
+        <p class="mus-quote">"Sans moi la fanfare jouerait plus juste, mais moins longtemps"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Mathieu_Pécastaing.jpg" alt="Mathieu PECASTAING"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Mathieu <span class="uppercase">PECASTAING</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Toutes les filles de la boucalaise sont magnifiques, un peu comme !"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Mathieu_Pécastaing.jpg" alt="Mathieu PECASTAING" class="mus-photo shadow-green">
+        <p class="mus-name">Mathieu <span class="uppercase">PECASTAING</span></p>
+        <p class="mus-quote">"Toutes les filles de la boucalaise sont magnifiques..."</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Sébastien_Carrera.jpg" alt="Sebastien CARRERA"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Sebastien <span class="uppercase">CARRERA</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Quand j'ai rencontré ma femme, la musique faisait partie du package"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Sébastien_Carrera.jpg" alt="Sebastien CARRERA" class="mus-photo shadow-green">
+        <p class="mus-name">Sebastien <span class="uppercase">CARRERA</span></p>
+        <p class="mus-quote">"Quand j'ai rencontré ma femme, la musique faisait partie du package"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Xavier_Glyze.jpg" alt="Xavier GLYZE"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Xavier <span class="uppercase">GLYZE</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Bénévole de la fanfare: celui qui fait beaucoup de choses … sauf du bruit avec un instrument"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Xavier_Glyze.jpg" alt="Xavier GLYZE" class="mus-photo shadow-green">
+        <p class="mus-name">Xavier <span class="uppercase">GLYZE</span></p>
+        <p class="mus-quote">"Celui qui fait beaucoup de choses … sauf du bruit avec un instrument"</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Caroline_Lorenzi.jpg" alt="Caroline LORENZI"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Caroline <span class="uppercase">LORENZI</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">""</p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Caroline_Lorenzi.jpg" alt="Caroline LORENZI" class="mus-photo shadow-green">
+        <p class="mus-name">Caroline <span class="uppercase">LORENZI</span></p>
+        <p class="mus-quote">""</p>
       </div>
 
-      <div class="text-center w-40">
-        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Jules_Pécastaing.jpg" alt="Jules PECASTAING"
-             class="w-36 h-36 rounded-full mx-auto bg-white object-contain shadow-green">
-        <p class="font-semibold mt-2">Jules <span class="uppercase">PECASTAING</span></p>
-        <p class="text-sm text-gray-600 italic w-36 mx-auto break-words">
-          "Justine sera toujours mon amoureuse de la musicalaise, fais gaffe Gaétan !"
-        </p>
+      <div class="mus-card">
+        <img src="img/Musiciens/MUSICIENS/MEMBRES - BENEVOLES/Jules_Pécastaing.jpg" alt="Jules PECASTAING" class="mus-photo shadow-green">
+        <p class="mus-name">Jules <span class="uppercase">PECASTAING</span></p>
+        <p class="mus-quote">"Justine sera toujours mon amoureuse..."</p>
       </div>
-
     </div>
   </div>
 

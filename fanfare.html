@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Fanfare - Historique</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-green-900 font-sans">
+
+<!-- Navbar (responsive) -->
+<nav class="bg-green-700 text-white px-6 py-4">
+  <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <!-- Logo + titre -->
+    <a href="index.html" class="flex items-center gap-3 min-w-0">
+      <div class="bg-white rounded-full p-1 shrink-0">
+        <img src="logo_boucalaise.png" class="w-14 h-14 md:w-20 md:h-20 rounded-full" alt="Logo" />
+      </div>
+      <span class="text-lg md:text-2xl font-bold truncate">Fanfare La Boucalaise</span>
+    </a>
+
+    <!-- Bouton menu (mobile) -->
+    <button id="menuBtn"
+      class="md:hidden inline-flex items-center justify-center p-2 rounded hover:bg-green-600"
+      aria-label="Ouvrir le menu">
+      <!-- icône hamburger -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <!-- Liens (desktop) -->
+    <div class="hidden md:flex gap-6 text-sm">
+      <a href="index.html" class="hover:underline">Accueil</a>
+      <a href="fanfare.html" class="hover:underline">La Fanfare</a>
+      <a href="musiciens.html" class="hover:underline">Nos Musiciens</a>
+      <a href="morceaux.html" class="hover:underline">Nos Morceaux</a>
+      <a href="sponsors.html" class="hover:underline">Nos Sponsors</a>
+      <a href="rejoindre.html" class="hover:underline">Nous Rejoindre</a>
+    </div>
+  </div>
+
+  <!-- Menu mobile (dépliable) -->
+  <div id="mobileMenu" class="md:hidden hidden mt-4 space-y-2 text-sm">
+    <a href="index.html" class="block px-3 py-2 rounded hover:bg-green-600">Accueil</a>
+    <a href="fanfare.html" class="block px-3 py-2 rounded hover:bg-green-600">La Fanfare</a>
+    <a href="musiciens.html" class="block px-3 py-2 rounded hover:bg-green-600">Nos Musiciens</a>
+    <a href="morceaux.html" class="block px-3 py-2 rounded hover:bg-green-600">Nos Morceaux</a>
+    <a href="sponsors.html" class="block px-3 py-2 rounded hover:bg-green-600">Nos Sponsors</a>
+    <a href="rejoindre.html" class="block px-3 py-2 rounded hover:bg-green-600">Nous Rejoindre</a>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+</script>
+
+  <!-- Titre -->
+  <section class="py-10 px-6 text-center">
+    <h1 class="text-4xl font-bold mb-2">📜 L'histoire de la fanfare</h1>
+    <p class="text-lg text-gray-700">Un voyage à travers les temps forts de La Boucalaise</p>
+  </section>
+
+  <!-- Timeline Articles -->
+  <section class="px-6 space-y-16">
+    <!-- Événement 1 -->
+    <div class="space-y-4">
+      <h2 class="text-3xl font-bold text-green-700 text-center">🥁 Les Débuts : La Clique Boucalaise (années 1920)</h2>
+      <div class="border-t border-green-200"></div>
+      <div class="md:flex md:items-center gap-6">
+        <div class="md:w-1/4">
+          <img src="img/fanfare/1918.JPEG" alt="1918" class="rounded shadow">
+        </div>
+        <div class="md:w-3/4">
+          <p class="text-2xl text-gray-700">La Boucalaise naît dans les années 1920 sous le nom de Clique Boucalaise, une formation de tambours et de clairons réunissant de jeunes Boucalais passionnés.
+            Très vite, la Clique participe aux fêtes du village, aux défilés et aux concours régionaux, devenant un acteur incontournable de la vie musicale locale.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Événement 2 -->
+    <div class="space-y-4">
+      <h2 class="text-3xl font-bold text-green-700 text-center">🎺 Une Société Qui S’Organise et Se Renforce</h2>
+      <div class="border-t border-green-200"></div>
+      <div class="md:flex md:items-center gap-6 flex-row-reverse">
+        <div class="md:w-1/4">
+          <img src="img/histoire_2005.jpg" alt="1978" class="rounded shadow">
+        </div>
+        <div class="md:w-3/4">
+          <p class=" text-2xl text-gray-700"> Dès les années 1930, la Clique se structure réellement : inscription au Journal Officiel, livret fédéral, réunions officielles, discipline exigeante.
+          Malgré les événements de l’époque, la Clique reste fidèle à son identité : festive, indépendante et profondément ancrée dans la vie du Boucau.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Événement 3 -->
+    <div class="space-y-4">
+      <h2 class="text-3xl font-bold text-green-700 text-center">🎷 L’Après-Guerre : Le Renouveau Musical</h2>
+      <div class="border-t border-green-200"></div>
+      <div class="md:flex md:items-center gap-6">
+        <div class="md:w-1/4">
+          <img src="img/histoire_2015.jpg" alt="2004" class="rounded shadow">
+        </div>
+        <div class="md:w-3/4">
+          <p class="text-2xl text-gray-700">À partir de 1945, la formation reprend son élan. Les effectifs grandissent, les sorties se multiplient, et des figures marquantes comme Battite Baulon donnent à la Clique une énergie nouvelle.
+          Défilés, fêtes locales, messes, concours : La Boucalaise s’impose comme un symbole de rassemblement et de convivialité.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Événement 4 -->
+
+    <div class="space-y-4">
+      <h2 class="text-3xl font-bold text-green-700 text-center">🌍 Des Uniformes, Des Fêtes et Des Souvenirs</h2>
+      <div class="border-t border-green-200"></div>
+      <div class="md:flex md:items-center gap-6 flex-row-reverse">
+        <div class="md:w-1/4">
+          <img src="img/histoire_2024.jpg" alt="2024" class="rounded shadow">
+        </div>
+        <div class="md:w-3/4">
+          <p class="text-2xl text-gray-700">
+            Des années 60 aux années 80, La Boucalaise évolue encore : nouveaux uniformes, nouvelle génération, premières musiciennes (cymbales), concours prestigieux remportés, déplacements dans tout le Sud-Ouest…
+La vie du groupe est rythmée par les répétitions, les sorties festives, les voyages (jusqu’en Espagne, à Montilla en 1981), et une ambiance unique faite d’amitié et de solidarité.
+C’est aussi l’époque des canotiers, des grandes fêtes boucalaises, et des anecdotes restées dans toutes les mémoires.
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+<!-- Événement 5 -->
+    <div class="space-y-4">
+      <h2 class="text-3xl font-bold text-green-700 text-center">🎷 Vers la Fanfare Moderne (années 1990–2000) </h2>
+      <div class="border-t border-green-200"></div>
+      <div class="md:flex md:items-center gap-6">
+        <div class="md:w-1/4">
+          <img src="img/histoire_2015.jpg" alt="2004" class="rounded shadow">
+        </div>
+        <div class="md:w-3/4">
+          <p class="text-2xl text-gray-700">
+            Dans les années 90, la formation gagne en niveau et en visibilité.
+Elle participe à de nombreux concours fédéraux, organise des concerts, voyage à Montilla (ville jumelée) et attire une nouvelle génération de musiciens.
+En 2003, une transition s’opère : la batterie-fanfare d’origine laisse place à une formation plus ouverte, qui continuera à évoluer au fil des années.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Événement 6 -->
+    <div class="space-y-4">
+      <h2 class="text-3xl font-bold text-green-700 text-center">🎷 La Boucalaise Aujourd’hui </h2>
+      <div class="border-t border-green-200"></div>
+      <div class="md:flex md:items-center gap-6 flex-row-reverse">
+        <div class="md:w-1/4">
+          <img src="img/histoire_2015.jpg" alt="2004" class="rounded shadow">
+        </div>
+        <div class="md:w-3/4">
+          <p class="text-2xl text-gray-700">
+            Depuis les années 2000, La Boucalaise n’a cessé de se réinventer :
+concerts, carnavals, fêtes locales, voyages, collaborations…
+La formation mêle aujourd'hui musique, convivialité, esprit de famille et transmission.
+En 2022, l’association fête ses 100 ans, confirmant son rôle de pilier culturel du Boucau et son attachement profond à l’histoire comme à l’avenir du village.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Événement 7 -->
+    <div class="space-y-4">
+      <h2 class="text-3xl font-bold text-green-700 text-center">🎷 Une Famille Avant Tout </h2>
+      <div class="border-t border-green-200"></div>
+      <div class="md:flex md:items-center gap-6">
+        <div class="md:w-1/4">
+          <img src="img/histoire_2015.jpg" alt="2004" class="rounded shadow">
+        </div>
+        <div class="md:w-3/4">
+          <p class="text-2xl text-gray-700">
+            Plus qu’un groupe musical, La Boucalaise est une communauté, une ambiance, un esprit :
+on y joue, on y rit, on y voyage, on y construit des souvenirs.
+Des générations entières s’y croisent, partageant la même passion et la même joie de faire vivre la musique.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-green-700 text-white py-6 text-center mt-16">
+    <p class="text-sm">📩 contact@la-boucalaise.com | 📞 07 81 07 65 46</p>
+    <div class="mt-2 space-x-4">
+      <a href="https://www.facebook.com/p/Fanfare-La-Boucalaise-100050930388001" target="_blank" class="underline">Facebook</a>
+      <a href="https://www.instagram.com/fanfare_la_boucalaise" target="_blank" class="underline">Instagram</a>
+    </div>
+  </footer>
+
+</body>
+</html>

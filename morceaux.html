@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Morceaux - La Boucalaise</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-gray-50 text-green-900 font-sans">
 
-<!-- Navbar (responsive) -->
+<!-- Navbar -->
 <nav class="bg-green-700 text-white px-6 py-4">
   <div class="max-w-6xl mx-auto flex items-center justify-between">
-    <!-- Logo + titre -->
     <a href="index.html" class="flex items-center gap-3 min-w-0">
       <div class="bg-white rounded-full p-1 shrink-0">
         <img src="logo_boucalaise.png" class="w-14 h-14 md:w-20 md:h-20 rounded-full" alt="Logo" />
@@ -20,28 +19,23 @@
       <span class="text-lg md:text-2xl font-bold truncate">Fanfare La Boucalaise</span>
     </a>
 
-    <!-- Bouton menu (mobile) -->
-    <button id="menuBtn"
-      class="md:hidden inline-flex items-center justify-center p-2 rounded hover:bg-green-600"
-      aria-label="Ouvrir le menu">
-      <!-- icône hamburger -->
+    <button id="menuBtn" class="md:hidden p-2 rounded hover:bg-green-600">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
 
-    <!-- Liens (desktop) -->
     <div class="hidden md:flex gap-6 text-sm">
       <a href="index.html" class="hover:underline">Accueil</a>
       <a href="fanfare.html" class="hover:underline">La Fanfare</a>
       <a href="musiciens.html" class="hover:underline">Nos Musiciens</a>
-      <a href="morceaux.html" class="hover:underline">Nos Morceaux</a>
+      <a href="morceaux.html" class="hover:underline font-bold">Nos Morceaux</a>
       <a href="sponsors.html" class="hover:underline">Nos Sponsors</a>
       <a href="rejoindre.html" class="hover:underline">Nous Rejoindre</a>
     </div>
   </div>
 
-  <!-- Menu mobile (dépliable) -->
   <div id="mobileMenu" class="md:hidden hidden mt-4 space-y-2 text-sm">
     <a href="index.html" class="block px-3 py-2 rounded hover:bg-green-600">Accueil</a>
     <a href="fanfare.html" class="block px-3 py-2 rounded hover:bg-green-600">La Fanfare</a>
@@ -58,138 +52,93 @@
   btn.addEventListener('click', () => menu.classList.toggle('hidden'));
 </script>
 
+<!-- Titre -->
+<section class="text-center py-8 px-6">
+  <h1 class="text-3xl md:text-4xl font-bold">🎵 Nos Morceaux</h1>
+  <p class="text-gray-600 mt-1">Découvrez notre répertoire musical</p>
+</section>
 
-  <!-- Titre principal -->
-  <section class="text-center py-10 px-6">
-    <h1 class="text-4xl font-bold">🎵 Nos Morceaux</h1>
-    <p class="text-lg text-gray-600">Découvrez notre répertoire musical</p>
-  </section>
+<!-- Contenu -->
+<section class="px-6 pb-16">
+  <div class="max-w-6xl mx-auto">
 
-  <!-- Liste morceaux -->
-  <section class="px-6 pb-16">
-    <div class="max-w-6xl mx-auto">
-
-      <!-- Petite barre de recherche (facultatif mais super utile) -->
-      <div class="mb-6 flex justify-center">
-        <input
-          id="search"
-          type="text"
-          placeholder="Rechercher un morceau..."
-          class="w-full max-w-xl rounded-xl border border-gray-200 bg-white px-4 py-3 shadow-sm outline-none focus:ring-2 focus:ring-green-300"
-        />
-      </div>
-
-      <!-- Grille responsive auto (s'adapte à l'écran) -->
-      <div
-        id="songsGrid"
-        class="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(220px,1fr))]"
-      ></div>
-
-      <p id="count" class="text-center text-sm text-gray-500 mt-6"></p>
+    <!-- Recherche -->
+    <div class="mb-6 flex justify-center">
+      <input
+        id="search"
+        type="text"
+        placeholder="Rechercher un morceau..."
+        class="w-full max-w-md rounded-xl border border-gray-200 bg-white px-4 py-2 shadow-sm outline-none focus:ring-2 focus:ring-green-300"
+      />
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="bg-green-700 text-white py-6 text-center mt-16">
-    <p class="text-sm">📩 contact@la-boucalaise.com | 📞 07 81 07 65 46</p>
-    <div class="mt-2 space-x-4">
-      <a href="https://www.facebook.com/p/Fanfare-La-Boucalaise-100050930388001" target="_blank" class="underline">Facebook</a>
-      <a href="https://www.instagram.com/fanfare_la_boucalaise" target="_blank" class="underline">Instagram</a>
+    <!-- Grille -->
+    <div
+      id="songsGrid"
+      class="
+        grid gap-4 justify-center
+        grid-cols-2
+        sm:grid-cols-2
+        md:grid-cols-3
+        lg:grid-cols-4
+      ">
     </div>
-  </footer>
 
-  <script>
-    // ✅ Tous les morceaux (55) : ils seront triés automatiquement par ordre alphabétique
-    const songs = [
-      "Aficion",
-      "Basket Case",
-      "Calle Sierpes",
-      "Can't Hold Us",
-      "Celebration",
-      "Chandelier",
-      "Cheerleader",
-      "Cielo ciego",
-      "Dancing Queen",
-      "Despacito",
-      "Don't Stop",
-      "Echame la culpa",
-      "El mismo sol",
-      "Elle a, elle l'a",
-      "Fiesta tropicale",
-      "Final Countdown",
-      "Go West",
-      "Happy",
-      "Hello",
-      "Hey Ya",
-      "I Get Around",
-      "I Gotta Feeling",
-      "I Want You Back",
-      "Iko Iko",
-      "Just a gigolo",
-      "L'Encantada",
-      "La banana",
-      "La bonita",
-      "Love is all",
-      "Magic",
-      "Manha D Carnaval",
-      "Marry You",
-      "Medley Johnny",
-      "Paquito",
-      "Party Rock",
-      "Pretty Fly",
-      "Proud Mary",
-      "Qd la mus est bonne",
-      "Radioactive",
-      "Respect",
-      "Samba Tequila",
-      "Shallow",
-      "Shape of You",
-      "Sunny",
-      "Sweet Caroline",
-      "Tage wie diese",
-      "Thrift shop",
-      "Timber",
-      "Uptown Funk",
-      "Vino",
-      "Viva la vida",
-      "Wellerman",
-      "What's up",
-      "YMCA",
-      "You are the first"
-    ];
+    <p id="count" class="text-center text-sm text-gray-500 mt-6"></p>
+  </div>
+</section>
 
-    // Tri alphabétique (gère accents/majuscules)
-    const sortedSongs = songs
-      .slice()
-      .sort((a, b) => a.localeCompare(b, "fr", { sensitivity: "base" }));
+<!-- Footer -->
+<footer class="bg-green-700 text-white py-6 text-center mt-16">
+  <p class="text-sm">📩 contact@la-boucalaise.com | 📞 07 81 07 65 46</p>
+  <div class="mt-2 space-x-4">
+    <a href="https://www.facebook.com/p/Fanfare-La-Boucalaise-100050930388001" target="_blank" class="underline">Facebook</a>
+    <a href="https://www.instagram.com/fanfare_la_boucalaise" target="_blank" class="underline">Instagram</a>
+  </div>
+</footer>
 
-    const grid = document.getElementById("songsGrid");
-    const search = document.getElementById("search");
-    const count = document.getElementById("count");
+<script>
+  const songs = [
+    "Aficion","Basket Case","Calle Sierpes","Can't Hold Us","Celebration",
+    "Chandelier","Cheerleader","Cielo ciego","Dancing Queen","Despacito",
+    "Don't Stop","Echame la culpa","El mismo sol","Elle a, elle l'a",
+    "Fiesta tropicale","Final Countdown","Go West","Happy","Hello","Hey Ya",
+    "I Get Around","I Gotta Feeling","I Want You Back","Iko Iko","Just a gigolo",
+    "L'Encantada","La banana","La bonita","Love is all","Magic",
+    "Manha D Carnaval","Marry You","Medley Johnny","Paquito","Party Rock",
+    "Pretty Fly","Proud Mary","Qd la mus est bonne","Radioactive","Respect",
+    "Samba Tequila","Shallow","Shape of You","Sunny","Sweet Caroline",
+    "Tage wie diese","Thrift shop","Timber","Uptown Funk","Vino",
+    "Viva la vida","Wellerman","What's up","YMCA","You are the first"
+  ];
 
-    function render(list) {
-      grid.innerHTML = "";
-      list.forEach(title => {
-        const card = document.createElement("div");
-        card.className = "bg-white rounded-2xl border border-gray-200 shadow-sm px-5 py-5";
-        card.innerHTML = `
-          <h3 class="font-semibold text-lg text-center">${title}</h3>
-        `;
-        grid.appendChild(card);
-      });
+  const sorted = songs.sort((a, b) =>
+    a.localeCompare(b, "fr", { sensitivity: "base" })
+  );
 
-      count.textContent = `${list.length} morceau${list.length > 1 ? "x" : ""} affiché${list.length > 1 ? "s" : ""}`;
-    }
+  const grid = document.getElementById("songsGrid");
+  const search = document.getElementById("search");
+  const count = document.getElementById("count");
 
-    render(sortedSongs);
-
-    // Recherche
-    search.addEventListener("input", () => {
-      const q = search.value.trim().toLowerCase();
-      const filtered = sortedSongs.filter(t => t.toLowerCase().includes(q));
-      render(filtered);
+  function render(list) {
+    grid.innerHTML = "";
+    list.forEach(title => {
+      const card = document.createElement("div");
+      card.className =
+        "bg-white border border-green-200 rounded-xl px-4 py-3 shadow-sm text-center w-40 sm:w-44";
+      card.innerHTML = `<p class="font-medium text-sm">${title}</p>`;
+      grid.appendChild(card);
     });
-  </script>
+    count.textContent = `${list.length} morceau${list.length > 1 ? "x" : ""}`;
+  }
+
+  render(sorted);
+
+  search.addEventListener("input", () => {
+    const q = search.value.toLowerCase();
+    render(sorted.filter(t => t.toLowerCase().includes(q)));
+  });
+</script>
 
 </body>
 </html>
